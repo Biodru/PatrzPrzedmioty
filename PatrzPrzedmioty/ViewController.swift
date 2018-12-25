@@ -9,6 +9,7 @@
 import UIKit
 import Vision
 import CoreML
+import ChameleonFramework
 
 class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
 
@@ -39,10 +40,10 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
     }
     
     func detect(image: CIImage) {
-        
         guard let model = try? VNCoreMLModel(for: Inceptionv3().model) else {
             fatalError("Failed to load CoreML")
         }
+        
         let request = VNCoreMLRequest(model: model) { (request, error) in
             guard let results = request.results as? [VNClassificationObservation] else {
                 fatalError("Błąd żądania")
@@ -50,8 +51,12 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
             if let firstResult = results.first {
                 if firstResult.identifier.contains("pen") {
                     self.navigationItem.title = "Długopis!"
+                    self.navigationController?.navigationBar.barTintColor = FlatGreen()
+                    self.navigationItem.rightBarButtonItem?.tintColor = ContrastColorOf(FlatGreen(), returnFlat: true)
                 } else {
                     self.navigationItem.title = "To nie jest długopis :("
+                    self.navigationController?.navigationBar.barTintColor = FlatRed()
+                    self.navigationItem.rightBarButtonItem?.tintColor = ContrastColorOf(FlatRed(), returnFlat: true)
                 }
             }
             print(results)
