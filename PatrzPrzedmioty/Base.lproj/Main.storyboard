@@ -22,7 +22,7 @@
                                 <rect key="frame" x="0.0" y="64" width="375" height="603"/>
                             </imageView>
                         </subviews>
-                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="backgroundColor" red="0.40392156862745099" green="0.22745098039215686" blue="0.71764705882352942" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="3kF-nd-veG" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="7CZ-D3-H1j"/>
                             <constraint firstAttribute="bottom" secondItem="3kF-nd-veG" secondAttribute="bottom" id="Zxs-4f-Rzk"/>
@@ -32,9 +32,9 @@
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <toolbarItems/>
-                    <navigationItem key="navigationItem" title="Wciśnij ikonę aparatu" id="7ku-gh-9K9">
+                    <navigationItem key="navigationItem" title="Wciśnij ikonę aparatu" largeTitleDisplayMode="always" id="7ku-gh-9K9">
                         <barButtonItem key="rightBarButtonItem" systemItem="camera" id="FMp-j4-uDt">
-                            <color key="tintColor" red="0.1803921568627451" green="0.80000000000000004" blue="0.44313725490196076" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             <connections>
                                 <action selector="cameraTapped:" destination="BYZ-38-t0r" id="t7n-7S-BEn"/>
                             </connections>
